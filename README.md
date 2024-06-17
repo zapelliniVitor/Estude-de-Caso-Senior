@@ -1,4 +1,4 @@
-# EstudoDeCaso-Senior
+# Estudo De Caso - Senior
 Documentação
 
 1. Introdução
