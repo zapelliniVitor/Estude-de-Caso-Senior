@@ -1,0 +1,24 @@
+<div *ngIf="showNavbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/clientes">ClientesApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/clientes">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contatos">Contatos</a>
+          </li>
+        </ul>
+        <button class="btn btn-outline-danger ms-auto" (click)="logoff()">Logoff</button>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>

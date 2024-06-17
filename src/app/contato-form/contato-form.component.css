@@ -1,0 +1,36 @@
+.badge-primary {
+  background-color: #007bff;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.badge-primary .btn-sm {
+  margin-left: 0.5em;
+  padding: 0 0.5em;
+}
+
+.badge-primary .btn-sm.btn-danger {
+  background-color: red;
+  border: none;
+}
+
+.mt-2 {
+  margin-top: 1em;
+}
+
+.btn-save-contato {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #FFF;
+}
+
+.btn-save-contato:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  color: #FFF;
+}

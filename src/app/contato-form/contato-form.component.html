@@ -1,0 +1,51 @@
+<div class="container mt-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>{{ contato.id === 0 ? 'Adicionar Contato' : 'Editar Contato' }}</h2>
+    <button class="btn btn-secondary btn-sm" routerLink="/contatos">Voltar</button>
+  </div>
+  <form (ngSubmit)="saveContato()">
+    <div class="form-group">
+      <label for="nomeCompleto">Nome Completo</label>
+      <input type="text" class="form-control" id="nomeCompleto" [(ngModel)]="contato.nomeCompleto" name="nomeCompleto" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mails</label>
+      <div class="input-group">
+        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="addEmail()">Adicionar E-mail</button>
+        </div>
+      </div>
+      <div class="mt-2">
+        <span *ngFor="let email of contato.emails; let i = index" class="badge badge-primary">
+          {{ email }}
+          <button type="button" class="btn btn-sm btn-danger" (click)="removeEmail(i)">X</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefones</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="telefone" [(ngModel)]="telefone" name="telefone" (keypress)="onlyNumberKey($event)">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="addTelefone()">Adicionar Telefone</button>
+        </div>
+      </div>
+      <div class="mt-2">
+        <span *ngFor="let telefone of contato.telefones; let i = index" class="badge badge-primary">
+          {{ telefone }}
+          <button type="button" class="btn btn-sm btn-danger" (click)="removeTelefone(i)">X</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-success">Salvar Contato</button>
+      <button type="button" class="btn btn-danger" routerLink="/contatos">Cancelar</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-2">{{ errorMessage }}</div>
+  </form>
+</div>

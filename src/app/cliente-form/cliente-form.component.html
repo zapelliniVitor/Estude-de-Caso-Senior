@@ -1,0 +1,73 @@
+<div class="container mt-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>{{ cliente.id === 0 ? 'Adicionar Cliente' : 'Editar Cliente' }}</h2>
+    <button class="btn btn-secondary btn-sm" routerLink="/clientes">Voltar</button>
+  </div>
+  <form (ngSubmit)="saveCliente()">
+    <div class="form-group">
+      <label for="nomeCompleto">Nome Completo</label>
+      <input type="text" class="form-control" id="nomeCompleto" [(ngModel)]="cliente.nomeCompleto" name="nomeCompleto" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mails</label>
+      <div class="input-group">
+        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="addEmail()">Adicionar E-mail</button>
+        </div>
+      </div>
+      <div class="mt-2">
+        <span *ngFor="let email of cliente.emails; let i = index" class="badge badge-primary">
+          {{ email }}
+          <button type="button" class="btn btn-sm btn-danger" (click)="removeEmail(i)">X</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefones</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="telefone" [(ngModel)]="telefone" name="telefone" (keypress)="onlyNumberKey($event)">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="addTelefone()">Adicionar Telefone</button>
+        </div>
+      </div>
+      <div class="mt-2">
+        <span *ngFor="let telefone of cliente.telefones; let i = index" class="badge badge-primary">
+          {{ telefone }}
+          <button type="button" class="btn btn-sm btn-danger" (click)="removeTelefone(i)">X</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dataRegistro">Data de Registro</label>
+      <input type="date" class="form-control" id="dataRegistro" [(ngModel)]="cliente.dataRegistro" name="dataRegistro" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="contato">Contatos</label>
+      <select class="form-control" id="contato" [(ngModel)]="contato.id" name="contato" [disabled]="contatos.length === 0">
+        <option *ngFor="let contato of contatos" [ngValue]="contato.id">{{ contato.nomeCompleto }}</option>
+      </select>
+      <div *ngIf="contatos.length === 0" class="alert alert-warning mt-2">
+        Não há contatos disponíveis para adicionar.
+      </div>
+      <div class="mt-2">
+        <span *ngFor="let contato of cliente.contatos; let i = index" class="badge badge-primary">
+          {{ contato.nomeCompleto }}
+          <button type="button" class="btn btn-sm btn-danger" (click)="removeContato(i)">X</button>
+        </span>
+      </div>
+      <button class="btn btn-outline-secondary mt-2" type="button" (click)="addContato()" [disabled]="contatos.length === 0">Adicionar Contato</button>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-success">Salvar Cliente</button>
+      <button type="button" class="btn btn-danger" routerLink="/clientes">Cancelar</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-2">{{ errorMessage }}</div>
+  </form>
+</div>

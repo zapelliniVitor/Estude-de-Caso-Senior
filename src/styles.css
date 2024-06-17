@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.card {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.card-header,
+.card-body {
+  padding: 1rem;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+}
+
+.card-body {
+  background-color: #ffffff;
+}
+
+
+button:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+.btn-group-spacing > .btn {
+  margin-right: 0.5em;
+}
+
+.btn-group-spacing > .btn:last-child {
+  margin-right: 0;
+}
+
+.btn-download {
+  border-radius: 0.25rem !important;
+}
+
+.btn-group-spacing > .btn {
+  margin-right: 0.5em;
+}
+
+.btn-group-spacing > .btn:last-child {
+  margin-right: 0;
+}
+
+.btn-action-spacing > .btn {
+  margin-right: 0.5em;
+}
+
+.btn-action-spacing > .btn:last-child {
+  margin-right: 0;
+}
+
+.input-group .form-control {
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+  margin-right: 0.5em;
+}
+
+.input-group .input-group-append .btn {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.navbar .btn-outline-danger {
+  margin-left: auto;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+.alert {
+  margin-top: 10px;
+}
+
+.badge {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+

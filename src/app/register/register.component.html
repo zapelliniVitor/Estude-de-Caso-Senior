@@ -1,0 +1,33 @@
+<div class="register-container">
+  <h2>Registrar</h2>
+  <form (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="username">Nome de usuário</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required>
+      <div *ngIf="usernameError" class="alert alert-danger mt-1">
+        Nome de usuário é obrigatório.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
+      <div *ngIf="passwordError" class="alert alert-danger mt-1">
+        Senha é obrigatória.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirmar senha</label>
+      <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control" required>
+      <div *ngIf="confirmPasswordError" class="alert alert-danger mt-1">
+        Confirmar senha é obrigatório.
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Registrar</button>
+      <button type="button" class="btn btn-secondary" (click)="goToLogin()">Voltar</button>
+    </div>
+    <div *ngIf="generalError" class="alert alert-danger mt-3">
+      {{ generalError }}
+    </div>
+  </form>
+</div>
